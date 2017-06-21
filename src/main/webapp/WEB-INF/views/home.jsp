@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: User
@@ -19,10 +20,10 @@
     <title>Carousel Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
+    <link href="<c:url value="/resources/css/carousel.css" />" rel="stylesheet">
 </head>
 <!-- NAVBAR
 ================================================== -->
@@ -183,7 +184,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/jquery-3.2.1.min.js"><\/script>')</script>
-<script src="js/bootstrap.min.js"></script>
+<script>window.jQuery || document.write('<script src="<c:url value="/resources/js/jquery-3.2.1.min.js" />"><\/script>')</script>
+<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 </body>
 </html>
