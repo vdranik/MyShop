@@ -2,6 +2,7 @@ package com.myshop.dao;
 
 import com.myshop.model.Product;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class ProductDao {
 
     public List<Product> getProductList(){
         Product product_example_1 = new Product();
+        product_example_1.setProductId("1");
         product_example_1.setProductName("XBOX ONE");
         product_example_1.setProductCategory("Console");
         product_example_1.setProductDescription("Perfect gamestation");
@@ -24,6 +26,7 @@ public class ProductDao {
         product_example_1.setProductManufacturer("Microsoft");
 
         Product product_example_2 = new Product();
+        product_example_2.setProductId("2");
         product_example_2.setProductName("Far Cry 5");
         product_example_2.setProductCategory("Game");
         product_example_2.setProductDescription("SupaPupa Game");
@@ -34,6 +37,7 @@ public class ProductDao {
         product_example_2.setProductManufacturer("Ubisoft");
 
         Product product_example_3 = new Product();
+        product_example_3.setProductId("3");
         product_example_3.setProductName("Far Cry 5 poster");
         product_example_3.setProductCategory("Accessory");
         product_example_3.setProductDescription("SupaPupa Poster");
@@ -50,5 +54,13 @@ public class ProductDao {
         return productList;
     }
 
+    public Product getProductById(String productId) throws IOException {
+         for(Product product: getProductList()){
+             if(product.getProductId().equals(productId)){
+                 return product;
+             }
+         }
 
+         throw new IOException("No product found");
+    }
 }
