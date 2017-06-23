@@ -1,10 +1,18 @@
 package com.myshop.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Created by User on 6/22/2017.
  */
+@Entity
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String productId;
     private String productName;
     private String productCategory;
