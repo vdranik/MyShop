@@ -53,4 +53,15 @@ public class HomeController {
 
         return "productInventory";
     }
+
+    @RequestMapping("/admin/productInventory/addProduct")
+    public String addProduct(Model model){
+        Product product = new Product();
+        product.setProductCategory("Console");
+        product.setProductCondition("NEW");
+        product.setProductStatus("Active");
+
+        model.addAttribute("product", product);
+        return "addProduct";
+    }
 }
