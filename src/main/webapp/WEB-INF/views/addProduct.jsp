@@ -9,7 +9,7 @@
             <p class="lead">Fill the below information to add a product!</p>
         </div>
 
-        <form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct" method="post" commandName="product">
+        <form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct" method="post" commandName="product" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="name">Name</label>
                 <form:input path="productName" id="name" class="form-Control" />
@@ -59,6 +59,11 @@
         <div class="form-group">
             <label for="manufacturer">Manufacturer</label>
             <form:input path="productManufacturer" id="manufacturer" class="form-Control" />
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="productImage">Upload Picture</label>
+            <form:input path="productImage" id="productImage" type="file" class="form:input-large" />
         </div>
 
         <br><br>
