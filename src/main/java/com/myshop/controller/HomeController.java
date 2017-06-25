@@ -127,7 +127,7 @@ public class HomeController {
     public String editProduct(@ModelAttribute("product") Product product, Model model, HttpServletRequest request) {
         MultipartFile productImage = product.getProductImage();
         String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-        path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\" + product.getProductId()+".pnd");
+        path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\" + product.getProductId()+".png");
 
         if(productImage != null && !productImage.isEmpty()) {
             try {
