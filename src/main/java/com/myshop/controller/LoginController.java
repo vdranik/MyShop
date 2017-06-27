@@ -19,7 +19,7 @@ public class LoginController {
         }
 
         if(logout!=null){
-            model.addAttribute("msg", "You have been logged successfully.");
+            model.addAttribute("msg", "You have been logged out successfully.");
         }
 
         return "login";
