@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/c"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security.xsd">
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.h2.Driver" />
@@ -49,12 +53,12 @@
             logout-success-url="/login?logout" />
     </security:http>
 
-    <security:authrntication-manager>
-        <security:authentification-provider>
+    <security:authentication-manager>
+        <security:authentication-provider>
             <security:jdbc-user-service data-source-ref="dataSource"
                                         authorities-by-username-query="SELECT username, authority FROM authorities WHERE username = ?"
                                         users-by-username-query="SELECT username, password, enabled FROM users WHERE username = ?" />
-        </security:authentification-provider>
-    </security:authrntication-manager>
+        </security:authentication-provider>
+    </security:authentication-manager>
 
 </beans>
