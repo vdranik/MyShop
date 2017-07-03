@@ -12,9 +12,10 @@
             </div>
         </section>
 
-        <section class="container">
+        <section class="container" ng-app="cardApp">
+            <div ng-controller="cardCtrl" ng-init="initCardId('${cardId}')">
             <div>
-                <a class="btn btn-danger pull-left"><span class="glyphicon-remove-sign"></span>Clear Card</a>
+                <a class="btn btn-danger pull-left" ng-click="clearCard()"><span class="glyphicon glyphicon-remove-circle"/>Cear Card</a>
             </div>
 
             <table class="table table-hover">
@@ -26,11 +27,12 @@
                     <th>Action</th>
                 </tr>
 
-                <tr>
-                    <td>productName</td>
-                    <td>productPrice</td>
-                    <td>quantity</td>
-                    <td>remove button</td>
+                <tr ng-repeat="item in card.cardItems" >
+                    <td>{{item.product.productName}}</td>
+                    <td>{{item.product.productPrice}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.totalPrice}}</td>
+                    <td><a href="#" class="label label-danger" ng-click="removeFromCard(item.product.productId)"><span class="glyphicon glyphicon-remove"/> Remove</a></td>
                 </tr>
 
                 <tr>
@@ -42,12 +44,12 @@
                 </tr>
             </table>
 
-            <a href="<spring:url value="/productList" /> ">Continue Shopping</a>
+            <a href="<spring:url value="/productList" />" class="btn btn-default">Continue Shopping</a>
+            </div>
         </section>
     </div>
 </div>
 
-
-
+<script src="<c:url value="/resources/js/controller.js" />"></script>
 
 <%@include file="/WEB-INF/views/template/footer.jsp"%>
