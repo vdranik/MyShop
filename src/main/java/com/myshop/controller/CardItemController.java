@@ -23,7 +23,7 @@ public class CardItemController {
     @RequestMapping(value = "/{cardId}", method = RequestMethod.GET)
     public String getCard(@PathVariable (value = "cardId") String cardId, Model model){
         model.addAttribute("cardId", cardId);
-        
+
         return "card";
     }
 }

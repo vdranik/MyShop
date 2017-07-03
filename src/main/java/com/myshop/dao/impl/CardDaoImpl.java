@@ -2,6 +2,7 @@ package com.myshop.dao.impl;
 
 import com.myshop.dao.CardDao;
 import com.myshop.model.Card;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +10,7 @@ import java.util.Map;
 /**
  * Created by User on 7/3/2017.
  */
+@Repository
 public class CardDaoImpl implements CardDao {
 
     private Map<String, Card> listOfCards;
