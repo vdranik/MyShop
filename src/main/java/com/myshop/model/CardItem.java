@@ -3,16 +3,16 @@ package com.myshop.model;
 /**
  * Created by User on 7/3/2017.
  */
-public class CartItem {
+public class CardItem {
 
     private Product product;
     private int quantity;
     private double totalPrice;
 
-    public CartItem(){
+    public CardItem(){
     }
 
-    public CartItem(Product product, int quantity, double totalPrice) {
+    public CardItem(Product product, int quantity, double totalPrice) {
         this.product = product;
         this.quantity = quantity;
         this.totalPrice = totalPrice;
