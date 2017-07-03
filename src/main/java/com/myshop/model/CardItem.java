@@ -12,10 +12,10 @@ public class CardItem {
     public CardItem(){
     }
 
-    public CardItem(Product product, int quantity, double totalPrice) {
+    public CardItem(Product product) {
         this.product = product;
-        this.quantity = quantity;
-        this.totalPrice = totalPrice;
+        this.quantity = 1;
+        this.totalPrice = getProduct().getProductPrice();
     }
 
     public Product getProduct() {
