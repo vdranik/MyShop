@@ -1,21 +1,48 @@
 package com.myshop.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+import java.io.Serializable;
+
 /**
  * Created by User on 7/3/2017.
  */
-public class CardItem {
+@Entity
+public class CardItem implements Serializable {
 
+    private static final long serialVersionUID = -904360230041854157L;
+
+    @Id
+    @GeneratedValue
+    private int cardItemId;
+
+    @ManyToOne
+    @JoinColumn(name = "cardId")
+    @JsonIgnore
+    private Card card;
+
+    @ManyToOne
+    @JoinColumn(name = "productId")
     private Product product;
+
     private int quantity;
     private double totalPrice;
 
-    public CardItem(){
+    public int getCardItemId() {
+        return cardItemId;
     }
 
-    public CardItem(Product product) {
-        this.product = product;
-        this.quantity = 1;
-        this.totalPrice = getProduct().getProductPrice();
+    public void setCardItemId(int cardItemId) {
+        this.cardItemId = cardItemId;
+    }
+
+    public Card getCard() {
+        return card;
+    }
+
+    public void setCard(Card card) {
+        this.card = card;
     }
 
     public Product getProduct() {

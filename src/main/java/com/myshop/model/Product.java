@@ -1,17 +1,22 @@
 package com.myshop.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by User on 6/22/2017.
  */
 @Entity
-public class Product {
+public class Product implements Serializable {
+
+    private static final long serialVersionUID = -3532377236419382983L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,8 +35,13 @@ public class Product {
     @Min(value = 0, message = "The product unit must not be less then zero")
     private int unitInStock;
     private String productManufacturer;
+
     @Transient
     private MultipartFile productImage;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<CardItem> cardItems;
 
     public String getProductId() {
         return productId;
@@ -111,5 +121,13 @@ public class Product {
 
     public void setProductImage(MultipartFile productImage) {
         this.productImage = productImage;
+    }
+
+    public List<CardItem> getCardItems() {
+        return cardItems;
+    }
+
+    public void setCardItems(List<CardItem> cardItems) {
+        this.cardItems = cardItems;
     }
 }
