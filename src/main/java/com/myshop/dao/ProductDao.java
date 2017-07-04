@@ -7,15 +7,16 @@ import java.util.List;
 /**
  * Created by User on 6/23/2017.
  */
+
 public interface ProductDao {
 
     void addProduct(Product product);
 
-    Product getProductById(String id);
+    Product getProductById(int id);
 
-    List<Product> getAllProducts();
+    List<Product> getProductList();
 
-    void deleteProduct(String id);
+    void deleteProduct(Product product);
 
     void editProduct(Product product);
 }

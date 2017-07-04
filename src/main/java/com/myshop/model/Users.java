@@ -15,7 +15,7 @@ public class Users {
     private int usersId;
     private String username;
     private String password;
-    private boolean enabled;
+    private Boolean enabled;
     private int customerId;
 
     public int getUsersId() {
@@ -42,11 +42,11 @@ public class Users {
         this.password = password;
     }
 
-    public boolean isEnabled() {
+    public Boolean getEnabled() {
         return enabled;
     }
 
-    public void setEnabled(boolean enabled) {
+    public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
 
@@ -57,4 +57,5 @@ public class Users {
     public void setCustomerId(int customerId) {
         this.customerId = customerId;
     }
+
 }

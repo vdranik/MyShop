@@ -12,24 +12,23 @@ import java.io.Serializable;
 @Entity
 public class Customer implements Serializable {
 
-    private static final long serialVersionUID = 2373908671993964271L;
+    private static final long serialVersionUID = 5140900014886997914L;
 
     @Id
     @GeneratedValue
-    private int customerId;
+    private int cutomerId;
 
-    @NotEmpty(message = "The customer name must not be null.")
+    @NotEmpty (message = "The customer name must not be null")
     private String customerName;
 
-    @NotEmpty(message = "The customer email must not be null.")
+    @NotEmpty (message = "The customer email must not be null")
     private String customerEmail;
     private String customerPhone;
 
-
-    @NotEmpty(message = "The customer name must not be null.")
+    @NotEmpty (message = "The customer username must not be null")
     private String username;
 
-    @NotEmpty(message = "The customer password must not be null.")
+    @NotEmpty (message = "The customer password must not be null")
     private String password;
 
     private boolean enabled;
@@ -43,16 +42,16 @@ public class Customer implements Serializable {
     private ShippingAddress shippingAddress;
 
     @OneToOne
-    @JoinColumn(name = "cardId")
+    @JoinColumn(name = "cartId")
     @JsonIgnore
     private Card card;
 
-    public int getCustomerId() {
-        return customerId;
+    public int getCutomerId() {
+        return cutomerId;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setCutomerId(int cutomerId) {
+        this.cutomerId = cutomerId;
     }
 
     public String getCustomerName() {

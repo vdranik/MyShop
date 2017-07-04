@@ -12,11 +12,14 @@ import java.io.Serializable;
 @Entity
 public class BillingAddress implements Serializable {
 
-    private static final long serialVersionUID = 9044030613927362525L;
+
+    private static final long serialVersionUID = -6091579459463730482L;
+
 
     @Id
     @GeneratedValue
     private int billingAddressId;
+
     private String streetName;
     private String apartmentNumber;
     private String city;
@@ -90,6 +93,7 @@ public class BillingAddress implements Serializable {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
 
     @Override
     public String toString() {
