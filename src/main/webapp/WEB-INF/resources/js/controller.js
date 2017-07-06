@@ -1,4 +1,4 @@
-var cardApp = angular.module ("cardApp", []);
+var cartApp = angular.module ("cartApp", []);
 
 cardApp.controller("cardCtrl", function($scope, $http){
 
