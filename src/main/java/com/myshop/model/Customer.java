@@ -42,7 +42,7 @@ public class Customer implements Serializable {
     private ShippingAddress shippingAddress;
 
     @OneToOne
-    @JoinColumn(name = "cartId")
+    @JoinColumn(name = "cardId")
     @JsonIgnore
     private Card card;
 

@@ -3,13 +3,13 @@ var cardApp = angular.module ("cardApp", []);
 cardApp.controller("cardCtrl", function($scope, $http){
 
     $scope.refreshCard = function(){
-        $http.get('/myShop/rest/card/' + $scope.cardId).success(function (data){
+        $http.get('/rest/card/' + $scope.cardId).success(function (data){
             $scope.card = data;
         });
     };
 
     $scope.clearCard = function(){
-        $http.delete('/myShop/rest/card/' + $scope.cardId).success($scope.refreshCard());
+        $http.delete('/rest/card/' + $scope.cardId).success($scope.refreshCard());
     };
 
     $scope.initCardId = function(cardId){
@@ -18,13 +18,13 @@ cardApp.controller("cardCtrl", function($scope, $http){
     };
 
     $scope.addToCard = function(productId){
-        $http.put('/myShop/rest/card/add/' + productId).success(function (){
+        $http.put('/rest/card/add/' + productId).success(function (){
             alert('Product successfully added to the card!');
         });
     };
 
     $scope.removeFromCard = function(productId){
-        $http.put('/myShop/rest/card/remove/' + productId).success(function(data){
+        $http.put('/rest/card/remove/' + productId).success(function(data){
             $scope.refreshCard();
         });
     };
