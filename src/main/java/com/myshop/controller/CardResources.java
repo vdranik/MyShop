@@ -4,6 +4,7 @@ import com.myshop.model.Card;
 import com.myshop.model.CardItem;
 import com.myshop.model.Customer;
 import com.myshop.model.Product;
+import com.myshop.service.CardItemService;
 import com.myshop.service.CardService;
 import com.myshop.service.CustomerService;
 import com.myshop.service.ProductService;
