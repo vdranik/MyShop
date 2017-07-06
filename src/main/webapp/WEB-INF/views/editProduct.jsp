@@ -24,8 +24,8 @@
 
             <div class="form-group">
                 <label for="category">Category</label>
-                <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="instrument" />Instrument</label>
-                <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="record" />Record</label>
+                <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="console" />Console</label>
+                <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="game" />Game</label>
                 <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" value="accessory" />Accessory</label>
             </div>
 

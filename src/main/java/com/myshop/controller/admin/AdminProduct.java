@@ -1,5 +1,7 @@
 package com.myshop.controller.admin;
 
+import com.myshop.model.Product;
+import com.myshop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,9 +19,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-/**
- * Created by User on 7/5/2017.
- */
 @Controller
 @RequestMapping("/admin")
 public class AdminProduct {
@@ -32,7 +31,7 @@ public class AdminProduct {
     @RequestMapping("/product/addProduct")
     public String addProduct(Model model){
         Product product = new Product();
-        product.setProductCategory("console");
+        product.setProductCategory("instrument");
         product.setProductCondition("new");
         product.setProductStatus("active");
 
@@ -67,7 +66,7 @@ public class AdminProduct {
     }
 
     @RequestMapping("/product/editProduct/{id}")
-    public String editProduct(@PathVariable("id") int id, Model model){
+    public String editProduct(@PathVariable("id") int id,  Model model){
         Product product = productService.getProductById(id);
 
         model.addAttribute("product", product);

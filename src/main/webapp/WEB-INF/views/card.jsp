@@ -52,6 +52,6 @@
         </section>
 
 <!-- My -->
-<script src="<c:url value="/resources/js/controller.js?v3" /> "></script>
+<script src="<c:url value="/resources/js/controller.js" /> "></script>
 
 <%@ include file="/WEB-INF/views/template/footer.jsp" %>

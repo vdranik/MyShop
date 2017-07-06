@@ -12,29 +12,29 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="first-slide home-image" src="<c:url value="/resources/images/back1.jpg" />" alt="First slide">
+                    <img class="first-slide home-image" src="<c:url value="/resources/images/console.jpg" />" alt="First slide">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Welcome to Le's Music Store</h1>
-                            <p>Here you can browse and buy Instruments. Records and music related Accessories. Order How for Your Amazing New Kit!</p>
+                            <h1>Welcome to MyShop</h1>
+                            <p>CONSOLES!Bla-bla-bla</p>
                         </div>
                     </div>
                 </div>
                 <div class="item">
-                    <img class="second-slide home-image" src="<c:url value="/resources/images/back2.jpg" />" alt="Second slide">
+                    <img class="second-slide home-image" src="<c:url value="/resources/images/games.jpg" />" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Facts You Should know About Music</h1>
-                            <p>Music brings jey, to all of our hearts. It's one of those, emotional arts.</p>
+                            <h1>Facts You Should know About Games</h1>
+                            <p>GAMES!Bla-bla-bla</p>
                         </div>
                     </div>
                 </div>
                 <div class="item">
-                    <img class="third-slide home-image " src="<c:url value="/resources/images/back3.jpg" />" alt="Third slide">
+                    <img class="third-slide home-image " src="<c:url value="/resources/images/accessory.jpg" />" alt="Third slide">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>It's A Jazz Affair</h1>
-                            <p>Through ups and downs, Somehow I manage to survive in life.</p>
+                            <h1>Accessory</h1>
+                            <p>ACCESSORY!Bla-bla-bla</p>
                         </div>
                     </div>
                 </div>
@@ -59,35 +59,35 @@
             <!-- Three columns of text below the carousel -->
             <div class="row">
                 <div class="col-lg-4">
-                    <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Instrument" />" role="button">
-                        <img class="img-circle" src="<c:url value="/resources/images/instrument.jpg"/>" alt="Instrument Image" width="140" height="140">
+                    <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Console" />" role="button">
+                        <img class="img-circle" src="<c:url value="/resources/images/console.jpg"/>" alt="Console Image" width="140" height="140">
                     </a>
 
-                    <h2>Instrument:</h2>
-                    <p>Well crafted and delicate instruments</p>
+                    <h2>Console:</h2>
+                    <p>Cooooooonsoles</p>
 
                 </div>
 
 
 
                 <div class="col-lg-4">
-                    <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Record" />" role="button">
-                        <img class="img-circle" src="<c:url value="/resources/images/record.gif"/>" alt="Instrument Image" width="140" height="140">
+                    <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Game" />" role="button">
+                        <img class="img-circle" src="<c:url value="/resources/images/games.jpg"/>" alt="Game Image" width="140" height="140">
                     </a>
 
-                    <h2>Discography:</h2>
-                    <p>An exceptional collections of music records in favor of the traditional and modern genre of jazz </p>
+                    <h2>Games:</h2>
+                    <p>Games-games-games</p>
 
                 </div>
 
 
                 <div class="col-lg-4">
                     <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Accessory" />" role="button">
-                        <img class="img-circle" src="<c:url value="/resources/images/accessory.jpg"/>" alt="Instrument Image" width="140" height="140">
+                        <img class="img-circle" src="<c:url value="/resources/images/accessory.jpg"/>" alt="Accessory Image" width="140" height="140">
                     </a>
 
                     <h2>Accessories:</h2>
-                    <p>All musical and related geeky goods</p>
+                    <p>All gamers and related geeky goods</p>
 
                 </div>
             </div>

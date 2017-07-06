@@ -1,6 +1,5 @@
 package com.myshop.model;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
 

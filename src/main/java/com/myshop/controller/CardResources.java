@@ -1,5 +1,13 @@
 package com.myshop.controller;
 
+import com.myshop.model.Card;
+import com.myshop.model.CardItem;
+import com.myshop.model.Customer;
+import com.myshop.model.Product;
+import com.myshop.service.CardItemService;
+import com.myshop.service.CardService;
+import com.myshop.service.CustomerService;
+import com.myshop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.User;
@@ -9,9 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Created by User on 7/6/2017.
- */
 @Controller
 @RequestMapping("/rest/card")
 public class CardResources {
@@ -87,3 +92,4 @@ public class CardResources {
 
     }
 }
+

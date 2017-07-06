@@ -3,7 +3,6 @@
 <%@ include file="/WEB-INF/views/template/header.jsp" %>
 
 <script>
-
     $(document).ready(function(){
         var searchCondition = '${searchCondition}';
 

@@ -1,6 +1,9 @@
 package com.myshop.controller;
 
-
+import com.myshop.model.BillingAddress;
+import com.myshop.model.Customer;
+import com.myshop.model.ShippingAddress;
+import com.myshop.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -59,5 +62,4 @@ public class RegisterController {
         customerService.addCustomer(customer);
         return "registerCustomerSuccess";
     }
-
 }

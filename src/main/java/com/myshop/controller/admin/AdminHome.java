@@ -1,5 +1,9 @@
 package com.myshop.controller.admin;
 
+import com.myshop.model.Customer;
+import com.myshop.model.Product;
+import com.myshop.service.CustomerService;
+import com.myshop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,9 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-/**
- * Created by User on 7/4/2017.
- */
 @Controller
 @RequestMapping("/admin")
 public class AdminHome {
@@ -17,13 +18,16 @@ public class AdminHome {
     @Autowired
     private ProductService productService;
 
+    @Autowired
+    private CustomerService customerService;
+
     @RequestMapping
-    public String adminPage() {
+    public String adminPage(){
         return "admin";
     }
 
     @RequestMapping("/productInventory")
-    public String productInventory(Model model) {
+    public String productInventory(Model model){
         List<Product> products = productService.getProductList();
         model.addAttribute("products", products);
 
@@ -31,8 +35,11 @@ public class AdminHome {
     }
 
     @RequestMapping("/customer")
-    public String customerManagement(Model model){
+    public String customerManagerment(Model model){
+
+        List<Customer> customerList = customerService.getAllCustomers();
+        model.addAttribute("customerList", customerList);
+
         return "customerManagement";
     }
-
 }
