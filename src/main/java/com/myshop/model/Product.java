@@ -9,9 +9,6 @@ import javax.validation.constraints.Min;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Created by User on 6/22/2017.
- */
 @Entity
 public class Product implements Serializable {
 
@@ -21,8 +18,9 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int productId;
 
-    @NotEmpty (message = "The product name must not be null")
+    @NotEmpty(message = "The product name must not be empty")
     private String productName;
+
     private String productCategory;
     private String productDescription;
 
@@ -30,6 +28,7 @@ public class Product implements Serializable {
     private double productPrice;
     private String productCondition;
     private String productStatus;
+
 
     @Min(value = 0, message = "The product unit must not be less then zero")
     private int unitInStock;
@@ -40,7 +39,8 @@ public class Product implements Serializable {
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
-    private List<CardItem> cardItems;
+    private List<CardItem> cardItemList;
+
 
     public int getProductId() {
         return productId;
@@ -114,6 +114,7 @@ public class Product implements Serializable {
         this.productManufacturer = productManufacturer;
     }
 
+
     public MultipartFile getProductImage() {
         return productImage;
     }
@@ -122,11 +123,12 @@ public class Product implements Serializable {
         this.productImage = productImage;
     }
 
-    public List<CardItem> getCardItems() {
-        return cardItems;
+
+    public List<CardItem> getCardItemList() {
+        return cardItemList;
     }
 
-    public void setCardItems(List<CardItem> cardItems) {
-        this.cardItems = cardItems;
+    public void setCardItemList(List<CardItem> cardItemList) {
+        this.cardItemList = cardItemList;
     }
 }

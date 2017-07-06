@@ -1,8 +1,6 @@
 package com.myshop.dao.impl;
 
 import com.myshop.dao.CardItemDao;
-import com.myshop.model.Card;
-import com.myshop.model.CardItem;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

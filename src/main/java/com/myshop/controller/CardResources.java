@@ -1,9 +1,5 @@
 package com.myshop.controller;
 
-import com.myshop.model.Card;
-import com.myshop.model.CardItem;
-import com.myshop.model.Customer;
-import com.myshop.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.User;

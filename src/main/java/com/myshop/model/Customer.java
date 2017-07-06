@@ -1,16 +1,15 @@
 package com.myshop.model;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * Created by User on 7/4/2017.
- */
 @Entity
-public class Customer implements Serializable {
+public class Customer implements Serializable{
+
 
     private static final long serialVersionUID = 5140900014886997914L;
 

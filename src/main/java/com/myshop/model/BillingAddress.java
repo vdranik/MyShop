@@ -1,16 +1,14 @@
 package com.myshop.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import java.io.Serializable;
 
-/**
- * Created by User on 7/4/2017.
- */
 @Entity
-public class BillingAddress implements Serializable {
+public class BillingAddress implements Serializable{
 
 
     private static final long serialVersionUID = -6091579459463730482L;
@@ -106,4 +104,5 @@ public class BillingAddress implements Serializable {
                 ", zipCode='" + zipCode + '\'' +
                 '}';
     }
+
 }

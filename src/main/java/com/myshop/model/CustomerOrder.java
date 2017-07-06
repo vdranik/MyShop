@@ -3,13 +3,11 @@ package com.myshop.model;
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * Created by User on 7/4/2017.
- */
 @Entity
-public class CustomerOrder implements Serializable {
+public class CustomerOrder implements Serializable{
 
-    private static final long serialVersionUID = -402452470684707937L;
+
+    private static final long serialVersionUID = -1546649310334411202L;
 
     @Id
     @GeneratedValue
@@ -18,7 +16,6 @@ public class CustomerOrder implements Serializable {
     @OneToOne
     @JoinColumn(name = "cardId")
     private Card card;
-
 
     @OneToOne
     @JoinColumn(name = "customerId")
@@ -29,7 +26,7 @@ public class CustomerOrder implements Serializable {
     private BillingAddress billingAddress;
 
     @OneToOne
-    @JoinColumn(name = "shippingAddressId")
+    @JoinColumn(name="shippingAddressId")
     private ShippingAddress shippingAddress;
 
     public int getCustomerOrderId() {

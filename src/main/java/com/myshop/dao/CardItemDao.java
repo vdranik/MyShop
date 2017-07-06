@@ -1,8 +1,5 @@
 package com.myshop.dao;
 
-import com.myshop.model.Card;
-import com.myshop.model.CardItem;
-
 /**
  * Created by User on 7/6/2017.
  */

@@ -1,7 +1,5 @@
 package com.myshop.dao;
 
-import com.myshop.model.Card;
-
 import java.io.IOException;
 
 /**

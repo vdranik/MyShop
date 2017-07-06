@@ -1,9 +1,6 @@
 package com.myshop.service.impl;
 
 import com.myshop.dao.CustomerOrderDao;
-import com.myshop.model.Card;
-import com.myshop.model.CardItem;
-import com.myshop.model.CustomerOrder;
 import com.myshop.service.CardService;
 import com.myshop.service.CustomerOrderService;
 import org.springframework.beans.factory.annotation.Autowired;

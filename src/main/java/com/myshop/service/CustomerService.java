@@ -1,7 +1,5 @@
 package com.myshop.service;
 
-import com.myshop.model.Customer;
-
 import java.util.List;
 
 public interface CustomerService {

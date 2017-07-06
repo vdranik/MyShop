@@ -5,9 +5,6 @@ package com.myshop.dao.impl;
  */
 import com.myshop.dao.CustomerDao;
 import com.myshop.model.Authorities;
-import com.myshop.model.Card;
-import com.myshop.model.Customer;
-import com.myshop.model.Users;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

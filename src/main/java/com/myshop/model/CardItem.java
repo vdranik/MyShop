@@ -5,9 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * Created by User on 7/3/2017.
- */
 @Entity
 public class CardItem implements Serializable {
 
@@ -28,6 +25,7 @@ public class CardItem implements Serializable {
 
     private int quantity;
     private double totalPrice;
+
 
     public int getCardItemId() {
         return cardItemId;
@@ -68,4 +66,5 @@ public class CardItem implements Serializable {
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
+    
 }

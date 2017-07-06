@@ -1,18 +1,17 @@
 package com.myshop.model;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Created by User on 7/3/2017.
- */
-@Entity
-public class Card implements Serializable {
 
-    private static final long serialVersionUID = 4094888009066171884L;
+@Entity
+public class Card implements Serializable{
+
+    private static final long serialVersionUID = 3940548625296145582L;
 
     @Id
     @GeneratedValue
@@ -59,4 +58,5 @@ public class Card implements Serializable {
     public void setGrandTotal(double grandTotal) {
         this.grandTotal = grandTotal;
     }
+
 }

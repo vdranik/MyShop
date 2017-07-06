@@ -29,4 +29,4 @@ public class CardItemServiceImpl implements CardItemService {
         return cardItemDao.getCardItemByProductId(productId);
     }
 
-} 
+}
