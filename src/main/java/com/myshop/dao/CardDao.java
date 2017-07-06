@@ -2,16 +2,15 @@ package com.myshop.dao;
 
 import com.myshop.model.Card;
 
-/**
- * Created by User on 7/3/2017.
- */
+import java.io.IOException;
+
 public interface CardDao {
 
-    Card create(Card card);
+    Card getCardById(int cardId);
 
-    Card read(String cardId);
+    Card validate(int cardId) throws IOException;
 
-    void update (String cardId, Card card);
+    void update(Card card);
 
-    void deleteCard(String cardId);
 }
+

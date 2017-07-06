@@ -1,24 +1,26 @@
 package com.myshop.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import java.io.Serializable;
+import java.util.List;
 
-/**
- * Created by User on 6/22/2017.
- */
 @Entity
-public class Product {
+public class Product implements Serializable {
+
+    private static final long serialVersionUID = -3532377236419382983L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String productId;
+    private int productId;
 
-    @NotEmpty (message = "The product name must not be null")
+    @NotEmpty(message = "The product name must not be empty")
     private String productName;
+
     private String productCategory;
     private String productDescription;
 
@@ -27,17 +29,24 @@ public class Product {
     private String productCondition;
     private String productStatus;
 
+
     @Min(value = 0, message = "The product unit must not be less then zero")
     private int unitInStock;
     private String productManufacturer;
+
     @Transient
     private MultipartFile productImage;
 
-    public String getProductId() {
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<CardItem> cardItemList;
+
+
+    public int getProductId() {
         return productId;
     }
 
-    public void setProductId(String productId) {
+    public void setProductId(int productId) {
         this.productId = productId;
     }
 
@@ -105,11 +114,21 @@ public class Product {
         this.productManufacturer = productManufacturer;
     }
 
+
     public MultipartFile getProductImage() {
         return productImage;
     }
 
     public void setProductImage(MultipartFile productImage) {
         this.productImage = productImage;
+    }
+
+
+    public List<CardItem> getCardItemList() {
+        return cardItemList;
+    }
+
+    public void setCardItemList(List<CardItem> cardItemList) {
+        this.cardItemList = cardItemList;
     }
 }

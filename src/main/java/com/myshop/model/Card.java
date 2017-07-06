@@ -1,41 +1,54 @@
 package com.myshop.model;
 
-import java.util.HashMap;
-import java.util.Map;
 
-/**
- * Created by User on 7/3/2017.
- */
-public class Card {
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-    private String cardId;
-    private Map<String, CardItem> cardItems;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
+
+
+@Entity
+public class Card implements Serializable{
+
+    private static final long serialVersionUID = 3940548625296145582L;
+
+    @Id
+    @GeneratedValue
+    private int cardId;
+
+    @OneToMany(mappedBy = "card", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<CardItem> cardItems;
+
+    @OneToOne
+    @JoinColumn(name = "customerId")
+    @JsonIgnore
+    private Customer customer;
+
     private double grandTotal;
 
-    private Card(){
-        cardItems = new HashMap<String, CardItem>();
-        grandTotal = 0;
-    }
-
-    public Card(String cardId) {
-        this();
-        this.cardId = cardId;
-    }
-
-    public String getCardId() {
+    public int getCardId() {
         return cardId;
     }
 
-    public void setCardId(String cardId) {
+    public void setCardId(int cardId) {
         this.cardId = cardId;
     }
 
-    public Map<String, CardItem> getCardItems() {
+    public List<CardItem> getCardItems() {
         return cardItems;
     }
 
-    public void setCardItems(Map<String, CardItem> cardItems) {
+    public void setCardItems(List<CardItem> cardItems) {
         this.cardItems = cardItems;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public double getGrandTotal() {
@@ -46,32 +59,4 @@ public class Card {
         this.grandTotal = grandTotal;
     }
 
-    public void addCardItem(CardItem cardItem){
-        String productId = cardItem.getProduct().getProductId();
-
-        if(cardItems.containsKey(productId)){
-            CardItem existingCardItem = cardItems.get(productId);
-            existingCardItem.setQuantity(existingCardItem.getQuantity() + cardItem.getQuantity());
-            cardItems.put(productId, existingCardItem);
-        } else {
-            cardItems.put(productId, cardItem);
-        }
-
-        updateGrandTotal();
-    }
-
-    public void removeCardItem(CardItem cardItem){
-        String productId = cardItem.getProduct().getProductId();
-
-        cardItems.remove(productId);
-        updateGrandTotal();
-    }
-
-    private void updateGrandTotal() {
-        grandTotal = 0;
-
-        for(CardItem cardItem : cardItems.values() ){
-            grandTotal = grandTotal + cardItem.getTotalPrice();
-        }
-    }
 }

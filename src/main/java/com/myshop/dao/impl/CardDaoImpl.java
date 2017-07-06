@@ -2,52 +2,46 @@ package com.myshop.dao.impl;
 
 import com.myshop.dao.CardDao;
 import com.myshop.model.Card;
+import com.myshop.service.CustomerOrderService;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.IOException;
 
-/**
- * Created by User on 7/3/2017.
- */
 @Repository
+@Transactional
 public class CardDaoImpl implements CardDao {
 
-    private Map<String, Card> listOfCards;
+    @Autowired
+    private SessionFactory sessionFactory;
 
-    public CardDaoImpl() {
-        listOfCards = new HashMap<String, Card>();
+    @Autowired
+    private CustomerOrderService customerOrderService;
+
+    public Card getCardById(int cardId){
+        Session session = sessionFactory.getCurrentSession();
+        return (Card) session.get(Card.class, cardId);
     }
 
-    public Card create(Card card) {
-        if(listOfCards.keySet().contains(card.getCardId())){
-            throw new IllegalArgumentException(String.format("Can not create a card. The card with the given id(%) already " +
-            "exists", card.getCardId()));
+    public void update(Card card){
+        int cardId = card.getCardId();
+        double grandTotal = customerOrderService.getCustomerOrderGrandTotal(cardId);
+        card.setGrandTotal(grandTotal);
+
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(card);
+    }
+
+    public Card validate(int cardId) throws IOException{
+        Card card = getCardById(cardId);
+        if(card == null || card.getCardItems().size() == 0){
+            throw new IOException(cardId + "");
         }
 
-        listOfCards.put(card.getCardId(), card);
+        update(card);
         return card;
-    }
-
-    public Card read(String cardId) {
-        return listOfCards.get(cardId);
-    }
-
-    public void update(String cardId, Card card) {
-        if(!listOfCards.keySet().contains(cardId)){
-            throw new IllegalArgumentException(String.format("Can not update a card. The card with the given id(%) " +
-                    "doesn't exists", card.getCardId()));
-        }
-
-        listOfCards.put(cardId, card);
-    }
-
-    public void deleteCard(String cardId) {
-        if(!listOfCards.keySet().contains(cardId)){
-            throw new IllegalArgumentException(String.format("Can not delete a card. The card with the given id(%) " +
-                    "doesn't exists", cardId));
-        }
-
-        listOfCards.remove(cardId);
     }
 }
