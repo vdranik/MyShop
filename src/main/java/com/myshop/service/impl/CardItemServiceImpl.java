@@ -7,9 +7,6 @@ import com.myshop.service.CardItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by User on 7/6/2017.
- */
 @Service
 public class CardItemServiceImpl implements CardItemService {
 
@@ -32,4 +29,4 @@ public class CardItemServiceImpl implements CardItemService {
         return cardItemDao.getCardItemByProductId(productId);
     }
 
-}
+} 

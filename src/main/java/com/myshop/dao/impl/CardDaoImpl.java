@@ -2,7 +2,6 @@ package com.myshop.dao.impl;
 
 import com.myshop.dao.CardDao;
 import com.myshop.model.Card;
-import com.myshop.service.CustomerOrderService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

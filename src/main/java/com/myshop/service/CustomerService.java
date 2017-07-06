@@ -1,8 +1,5 @@
 package com.myshop.service;
 
-/**
- * Created by User on 7/6/2017.
- */
 import com.myshop.model.Customer;
 
 import java.util.List;

@@ -11,9 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by User on 7/6/2017.
- */
 @Service
 public class CustmerOrderServiceImpl implements CustomerOrderService {
 
@@ -38,4 +35,5 @@ public class CustmerOrderServiceImpl implements CustomerOrderService {
 
         return grandTotal;
     }
+
 }

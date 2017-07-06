@@ -6,9 +6,7 @@ import com.myshop.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by User on 7/6/2017.
- */
+
 @Service
 public class CardServiceImpl implements CardService {
 

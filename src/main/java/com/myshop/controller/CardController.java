@@ -1,7 +1,6 @@
 package com.myshop.controller;
 
 import com.myshop.model.Customer;
-import com.myshop.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;

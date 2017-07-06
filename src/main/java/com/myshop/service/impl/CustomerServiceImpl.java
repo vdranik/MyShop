@@ -1,8 +1,5 @@
 package com.myshop.service.impl;
 
-/**
- * Created by User on 7/6/2017.
- */
 import com.myshop.dao.CustomerDao;
 import com.myshop.model.Customer;
 import com.myshop.service.CustomerService;
@@ -32,5 +29,6 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer getCustomerByUsername (String username){
         return customerDao.getCustomerByUsername(username);
     }
-    
+
+
 }
