@@ -1,20 +1,18 @@
 package com.myshop.dao;
 
-import java.util.List;
+import com.myshop.model.Product;
 
-/**
- * Created by User on 6/23/2017.
- */
+import java.util.List;
 
 public interface ProductDao {
 
-    void addProduct(Product product);
+    List<Product> getProductList();
 
     Product getProductById(int id);
 
-    List<Product> getProductList();
-
-    void deleteProduct(Product product);
+    void addProduct(Product product);
 
     void editProduct(Product product);
+
+    void deleteProduct(Product product);
 }

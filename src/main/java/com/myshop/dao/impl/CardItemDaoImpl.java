@@ -1,6 +1,8 @@
 package com.myshop.dao.impl;
 
 import com.myshop.dao.CardItemDao;
+import com.myshop.model.Card;
+import com.myshop.model.CardItem;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,9 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created by User on 7/6/2017.
- */
 @Repository
 @Transactional
 public class CardItemDaoImpl implements CardItemDao {

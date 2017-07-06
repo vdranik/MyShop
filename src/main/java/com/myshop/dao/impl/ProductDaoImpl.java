@@ -1,6 +1,7 @@
 package com.myshop.dao.impl;
 
 import com.myshop.dao.ProductDao;
+import com.myshop.model.Product;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,24 +11,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created by User on 6/23/2017.
- */
-
 @Repository
 @Transactional
 public class ProductDaoImpl implements ProductDao {
 
+
     @Autowired
     private SessionFactory sessionFactory;
 
-    public void addProduct(Product product) {
-        Session session = sessionFactory.getCurrentSession();
-        session.saveOrUpdate(product);
-        session.flush();
-    }
-
-    public Product getProductById(int id) {
+    public Product getProductById (int id){
         Session session = sessionFactory.getCurrentSession();
         Product product = (Product) session.get(Product.class, id);
         session.flush();
@@ -35,25 +27,32 @@ public class ProductDaoImpl implements ProductDao {
         return product;
     }
 
-    public List<Product> getProductList() {
+    public List<Product> getProductList(){
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("from Product");
-        List<Product> products = query.list();
+        List<Product> productList = query.list();
         session.flush();
 
-        return products;
+        return productList;
     }
 
-    @Override
-    public void deleteProduct(Product product) {
+    public void addProduct (Product product){
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(product);
+        session.flush();
+    }
+
+    public void editProduct (Product product){
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(product);
+        session.flush();
+    }
+
+    public void deleteProduct (Product product){
         Session session = sessionFactory.getCurrentSession();
         session.delete(product);
         session.flush();
     }
 
-    public void editProduct(Product product) {
-        Session session = sessionFactory.getCurrentSession();
-        session.saveOrUpdate(product);
-        session.flush();
-    }
 }
+

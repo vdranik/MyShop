@@ -1,6 +1,7 @@
 package com.myshop.service.impl;
 
 import com.myshop.dao.ProductDao;
+import com.myshop.model.Product;
 import com.myshop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

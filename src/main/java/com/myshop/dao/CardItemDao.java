@@ -1,8 +1,8 @@
 package com.myshop.dao;
 
-/**
- * Created by User on 7/6/2017.
- */
+import com.myshop.model.Card;
+import com.myshop.model.CardItem;
+
 public interface CardItemDao {
 
     void addCardItem(CardItem cardItem);

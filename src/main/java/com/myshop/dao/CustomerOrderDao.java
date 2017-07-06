@@ -1,8 +1,8 @@
 package com.myshop.dao;
 
-/**
- * Created by User on 7/6/2017.
- */
+import com.myshop.model.CustomerOrder;
+
 public interface CustomerOrderDao {
+
     void addCustomerOrder(CustomerOrder customerOrder);
 }
