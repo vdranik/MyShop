@@ -2,6 +2,7 @@ package com.myshop.dao.impl;
 
 import com.myshop.dao.CardDao;
 import com.myshop.model.Card;
+import com.myshop.service.CustomerOrderService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,8 @@ public class CardDaoImpl implements CardDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-//    @Autowired
-//    private CustomerOrderService customerOrderService;
+    @Autowired
+    private CustomerOrderService customerOrderService;
 
     public Card getCardById(int cardId){
         Session session = sessionFactory.getCurrentSession();
@@ -31,11 +32,11 @@ public class CardDaoImpl implements CardDao {
 
     public void update(Card card){
         int cardId = card.getCardId();
-//        double grandTotal = customerOrderService.getCustomerOrderGrandTotal(cardId);
-//        card.setGrandTotal(grandTotal);
-//
-//        Session session = sessionFactory.getCurrentSession();
-//        session.saveOrUpdate(card);
+        double grandTotal = customerOrderService.getCustomerOrderGrandTotal(cardId);
+        card.setGrandTotal(grandTotal);
+
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(card);
     }
 
     public Card validate(int cardId) throws IOException {
