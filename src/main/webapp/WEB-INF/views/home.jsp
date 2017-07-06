@@ -20,7 +20,7 @@
                 <div class="carousel-caption">
                     <h1>Welcome to MyShop!</h1>
                     <p>Here you can browse and buy Consoles, Games and accessories. Order now for your amazing new kit!</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="<c:url value="/register"/>" role="button">Sign up today</a></p>
                 </div>
             </div>
         </div>
