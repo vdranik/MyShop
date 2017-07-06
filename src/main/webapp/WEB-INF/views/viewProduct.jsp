@@ -36,7 +36,7 @@
                     <p ng-controller="cardCtrl">
                         <a href="<c:url value = "${url}" />" class="btn btn-default">Back</a>
                         <a href="#" class="btn btn-warning btn-large" ng-click="addToCard('${product.productId}')"><span class="glyphicon glyphicon-shopping-card"></span> Order Now</a>
-                        <a href="<spring:url value="/card" />" class="btn btn-default"><span class="glyphicon glyphicon-hand-right"></span> View Card</a>
+                        <a href="<spring:url value="/customer/card" />" class="btn btn-default"><span class="glyphicon glyphicon-hand-right"></span> View Card</a>
                     </p>
 
                 </div>
